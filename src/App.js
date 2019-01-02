@@ -10,7 +10,7 @@ import Guides from './pages/Guides';
 import Reviews from './pages/Reviews';
 import ReviewCard from './components/Review';
 
-const API = 'http://www.int-pg.guidanceguide.com/parentalguidance/api/v1/';
+const API = 'https://int-pg.guidanceguide.com//api/v1/';
 
 class App extends Component {
     render() {
