@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-const ReviewCard  = props => {
+const ReviewsCard  = props => {
     if(props.data.status_code !== 200){
         return props.data.message;
     }
@@ -12,4 +12,4 @@ const ReviewCard  = props => {
     return reviews;
 }
 
-export default ReviewCard;
+export default ReviewsCard;

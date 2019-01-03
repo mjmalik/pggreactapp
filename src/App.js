@@ -6,9 +6,11 @@
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from './pages/Home';
 import Guides from './pages/Guides';
 import Reviews from './pages/Reviews';
-import ReviewCard from './components/Review';
+import Review from './pages/Review';
+
 
 const API = 'https://int-pg.guidanceguide.com//api/v1/';
 
@@ -37,56 +39,11 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/guides" component={Guides} />
                 <Route path="/reviews" component={Reviews} />
+                <Route path="/review/:reviewID/:topic/:slug" component={Review}/>
               </div>
               </div>
             </Router>
           );
-    }
-}
-
-class Home extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          data: {
-            status_code: 200,
-            message: 'Error loading data.',
-            body: {
-              Results: []
-            }
-          },
-          isLoading: false,
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ isLoading: true });
-    
-        fetch(API + 'review',{
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'oauth_consumer_key': 'el0fpnlzzcjnh0s8aowtmnpkluk64cnn',
-            'oauth_consumer_secret': '88tpfkretevr8qh21ut1bdxh3c6bd82x',
-            'oauth_token': 'cp4fsi7hzedjck6y8ae52oitu7tkrcwv',
-            'oauth_secret': 'styhgnxnzq85k0ccpv69yg0os48umzqq',
-          }
-        })
-          .then(response => response.json())
-          .then(data => {
-            this.setState({ data: data, isLoading: false })
-          });
-    }
-    render() {
-        const { data, isLoading } = this.state;
-
-        if (isLoading) {
-            return <p>Loading ...</p>;
-        }
-        return (
-            <ul><ReviewCard data={data} /></ul>
-        )
     }
 }
 
