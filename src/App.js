@@ -11,9 +11,6 @@ import Guides from './pages/Guides';
 import Reviews from './pages/Reviews';
 import Review from './pages/Review';
 
-
-const API = 'https://int-pg.guidanceguide.com//api/v1/';
-
 class App extends Component {
     render() {
         return (

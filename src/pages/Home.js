@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReviewsCard from '../components/ReviewsCard';
 
-const API = 'https://int-pg.guidanceguide.com//api/v1/';
+const API = 'https://int-pg.guidanceguide.com/api/v1/';
 
 class Home extends Component {
     constructor(props) {

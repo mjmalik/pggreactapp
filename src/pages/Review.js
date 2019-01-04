@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReviewCard from '../components/ReviewCard';
-const API = 'https://int-pg.guidanceguide.com//api/v1/';
+const API = 'https://int-pg.guidanceguide.com/api/v1/';
 
 
 class Review extends Component {
@@ -21,7 +21,6 @@ class Review extends Component {
     componentDidMount() {
         this.setState({ isLoading: true });
         const reviewID = this.props.match.params.reviewID;
-        const self = this;
     
         fetch(API + 'review?reviewID='+reviewID,{
           headers: {
@@ -36,10 +35,18 @@ class Review extends Component {
           .then(response => response.json())
           .then(data => {
             this.setState({ data: data, isLoading: false })
-            console.log(self);
             if(data.status_code === 200){
               data.body.Results.map((review, index) =>{
                 document.querySelector("html title").innerHTML = review.title;
+                document.querySelector("#meta_description").content = review.shortDescription;
+                document.querySelector("#og_title").content = review.title;
+                document.querySelector("#og_url").content = window.location.href;
+                document.querySelector("#og_image").content = review.coverPhoto.photoURL;
+                document.querySelector("#og_description").content = review.shortDescription;
+                document.querySelector("#twitter_site").content = window.location.href;
+                document.querySelector("#twitter_title").content = review.title;
+                document.querySelector("#twitter_image").content = review.coverPhoto.photoURL;
+                document.querySelector("#twitter_description").content = review.shortDescription;
               });
             }
           });
