@@ -24,19 +24,19 @@ class App extends Component {
                     <Link to="/">Home</Link>
                   </li>
                   <li className="nav-item mr-2">
-                    <Link to="/guides">Guides</Link>
+                    <Link to="/guides/">Guides</Link>
                   </li>
                   <li className="nav-item mr-2">
-                    <Link to="/reviews">Reviews</Link>
+                    <Link to="/reviews/">Reviews</Link>
                   </li>
                 </ul>
               </div>  
               </div>      
               <div className="container">
                 <Route exact path="/" component={Home} />
-                <Route path="/guides" component={Guides} />
-                <Route path="/reviews" component={Reviews} />
-                <Route path="/review/:reviewID/:topic/:slug" component={Review}/>
+                <Route path="/guides/" component={Guides} />
+                <Route path="/reviews/" component={Reviews} />
+                <Route path="/review/:reviewID/:topic/:slug/" component={Review}/>
               </div>
               </div>
             </Router>
