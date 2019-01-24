@@ -39,7 +39,7 @@ class Home extends Component {
     }
     render() {
         const { data, isLoading } = this.state;
-        document.querySelector("html title").innerHTML = "Guidance Guide React App";
+        document.querySelector("html title").innerHTML = process.env.REACT_APP_TITLE;
         if (isLoading) {
             return <p>Loading ...</p>;
         }

@@ -5,9 +5,10 @@ const ReviewCard  = props => {
         return props.data.message;
     }
     const reviews = props.data.body.Results.map((review, index) => {
-        return <h1 key={index}>
+        return ( <h1 key={index}>
             {review.title}
-        </h1>;
+        </h1>        
+        );
     });
     return reviews;
 }
