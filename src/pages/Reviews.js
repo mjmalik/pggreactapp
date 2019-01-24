@@ -28,8 +28,8 @@ class Reviews extends Component {
             'Content-Type': 'application/json',
             'oauth_consumer_key': 'el0fpnlzzcjnh0s8aowtmnpkluk64cnn',
             'oauth_consumer_secret': '88tpfkretevr8qh21ut1bdxh3c6bd82x',
-            'oauth_token': 'cp4fsi7hzedjck6y8ae52oitu7tkrcwv',
-            'oauth_secret': 'styhgnxnzq85k0ccpv69yg0os48umzqq',
+            'oauth_token': 'wj8w7ogqsmswcqomr8y49m89ma5guthn',
+            'oauth_secret': 'nrysnqgxvuejf3erueesg3e93xgxfk1g',
           }
         })
           .then(response => response.json())
